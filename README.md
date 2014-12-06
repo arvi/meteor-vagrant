@@ -2,6 +2,8 @@
 
 A simple vagrant box for doing meteor apps
 
+Note to self. :)
+
 ##Getting Started
 1. Create meteor projects directory to handle all your meteor projects in local machine e.g., mkdir ~/srv/http/**meteor**
 2. Clone git repo: **git clone https://github.com/arvi/meteor-vagrant.git ~/srv/http/meteor**
@@ -17,18 +19,16 @@ A simple vagrant box for doing meteor apps
 11. **meteor --version** (will install meteor on first-time use)
 
 ##Creating a new meteor app
-1. **cd /meteor**
-2. **meteor create test-app** where (replace test-app with your meteor project name)
-
-Note: Make sure you've already done **vagrant ssh** to your meteor projects directory before doing this
-
+1. Make sure you've already done **vagrant ssh** to your meteor projects directory before doing this
+2. **cd /meteor**
+3. **meteor create test-app** where (replace test-app with your meteor project name)
 
 ##Running a meteor app
-Note: Make sure you've already done **vagrant ssh** to your meteor projects directory before doing this:
-1. **cd /vagrant | ls -la**
-2. **cd test-app/**
-3. **meteor**
-4. Open your web browser and copy displayed link after running no. 3 e.g **http://localhost:3000**
+1. Make sure you've already done **vagrant ssh** to your meteor projects directory before doing this
+2. **cd /vagrant | ls -la**
+3. **cd test-app/**
+4. **meteor**
+5. Open your web browser and copy displayed link after running no. 3 e.g **http://localhost:3000**
 
 ##Hot code reload in action
 1. Go to the directory that holds all your meteor project (either via new terminal tab or finder)
@@ -63,6 +63,14 @@ When doing meteor apps via vagrant, all in all you'll have 3-4 terminal tabs:
 2. Where you run **vagrant gatling-rsync-auto** command so you can edit locally. *See* ***Syncing local file changes*** *section*
 3. Where you run **meteor mongo** command to access mongodb. *See* ***Accessing MongoDB*** *section*
 4. Your local project directory (optional, if you prefer to do it via finder)
+
+##Removing meteor app
+Note: This will remove the app in /meteor, /vagrant, and your local meteor project directory
+
+1. Make sure you've already done **vagrant ssh** to your meteor projects directory before doing this
+2. Make sure **vagrant gatling-rsync-auto** has been run in another tab
+3. **cd /meteor**
+4. **rm -rf test-app**
 
 ##Thanks to the ff:
 1. https://github.com/mfasanya/vagrant-meteor (brilliant Vagrantfile configuration)
